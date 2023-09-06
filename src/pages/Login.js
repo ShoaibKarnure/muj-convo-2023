@@ -152,7 +152,7 @@ const Login = () => {
                 </div>
                 <div className='container sub-btn-container'>
                   <button
-                    className='btn login-btn'
+                    className='btn-all login-btn'
                     type='submit'
                     onClick={handleSubmit}
                   >
@@ -179,7 +179,7 @@ const Login = () => {
 
                 <div className='container sub-btn-container'>
                   <button
-                    className='btn login-btn'
+                    className='btn-all login-btn'
                     type='submit'
                     onClick={handleRegisterSubmit}
                   >
