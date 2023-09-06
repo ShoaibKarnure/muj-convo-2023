@@ -90,7 +90,6 @@
 .refund-inp {
   margin-top: 35px;
 }
-
 .refund-div {
   margin-top: 20%;
 }
@@ -160,4 +159,7 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+.ques-div {
+  margin: 40px 0;
 }

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../style/navbar.css";
 import mujImg from "../assets/logoMUJ.png";
 import { useAuth } from "../context/AuthContext";
 const Navbar = () => {
   const { isuserloggedin } = useAuth();
+
   return (
     <div className='navbar-full'>
       <nav>
