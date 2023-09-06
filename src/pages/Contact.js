@@ -7,7 +7,7 @@ const Contact = () => {
     <>
       <div className='home'>
         <div className='vector_right'>
-          <div className='main'>
+          <div className='main' style={{ marginTop: "7rem" }}>
             <ContactDetails />
           </div>
         </div>

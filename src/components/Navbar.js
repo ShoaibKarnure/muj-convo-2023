@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import "../style/navbar.css";
 import mujImg from "../assets/logoMUJ.png";
 import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+  const navigate = useNavigate();
   const { isuserloggedin } = useAuth();
 
   return (
@@ -10,8 +12,14 @@ const Navbar = () => {
       <nav>
         <img src={mujImg} alt='' className='muj-img' />
         <ul className='nav-items'>
-          <li>{isuserloggedin ? "Dashboard" : "Home"}</li>
-          <li>Contact</li>
+          <li
+            onClick={() => {
+              isuserloggedin ? navigate("/") : navigate("/login");
+            }}
+          >
+            {isuserloggedin ? "Dashboard" : "Home"}
+          </li>
+          <li onClick={() => navigate("/contact")}>Contact</li>
         </ul>
       </nav>
     </div>

@@ -30,12 +30,16 @@ const ContactDetails = () => {
         <Accordion>
           <Accordion.Item eventKey='0'>
             <Accordion.Header>
-              <h6>For Library Dues: Mr. Om Prakash Verma (9828543435)</h6>
+              <h6>For Library Dues</h6>
             </Accordion.Header>
             <Accordion.Body>
-              <BiMailSend />
+              <strong>
+                Mr. Om Prakash Verma <br />
+              </strong>
+              Mob: 9828543435
+              <br /> <BiMailSend />
               <span>
-                Email:{" "}
+                Email :{" "}
                 <a href='mailto:omprakash.verma@jaipur.manipal.edu'>
                   omprakash.verma@jaipur.manipal.edu
                 </a>
@@ -47,9 +51,14 @@ const ContactDetails = () => {
         <Accordion>
           <Accordion.Item eventKey='0'>
             <Accordion.Header>
-              <h6>For Finance Dues: Ms Deepthi Rajeev</h6>
+              <h6>For Finance Dues</h6>
             </Accordion.Header>
             <Accordion.Body>
+              <strong>
+                Ms Deepthi Rajeev
+                <br />
+              </strong>
+
               <BiMailSend />
               <span>
                 Email:{" "}
@@ -81,11 +90,14 @@ const ContactDetails = () => {
         <Accordion>
           <Accordion.Item eventKey='0'>
             <Accordion.Header>
-              <h6>
-                For Hostel Dues: Mr. Ashish Dosaya (9413749923 / 8976751015)
-              </h6>
+              <h6>For Hostel Dues</h6>
             </Accordion.Header>
             <Accordion.Body>
+              <strong>
+                Mr. Ashish Dosaya <br />
+              </strong>
+              Mob: 9413749923 / 8976751015
+              <br />
               <BiMailSend />
               <span>
                 Email:{" "}
@@ -100,9 +112,14 @@ const ContactDetails = () => {
         <Accordion>
           <Accordion.Item eventKey='0'>
             <Accordion.Header>
-              <h6>For AMS/Academics Dues: Dr. Kusum Lata Jain (9828133885)</h6>
+              <h6>For AMS/Academics Dues </h6>
             </Accordion.Header>
             <Accordion.Body>
+              <strong>
+                Dr. Kusum Lata Jain <br />
+              </strong>
+              Mob: 9828133885
+              <br />
               <BiMailSend />
               <span>
                 Email:{" "}
@@ -117,9 +134,14 @@ const ContactDetails = () => {
         <Accordion>
           <Accordion.Item eventKey='0'>
             <Accordion.Header>
-              <h6>For Sports Dues: Mr. Sanjeev Sharma (9993308598)</h6>
+              <h6>For Sports Dues</h6>
             </Accordion.Header>
             <Accordion.Body>
+              <strong>
+                Mr. Sanjeev Sharma <br />
+              </strong>
+              Mob: 9993308598
+              <br />
               <BiMailSend />
               <span>
                 Email:{" "}
@@ -134,9 +156,13 @@ const ContactDetails = () => {
         <Accordion>
           <Accordion.Item eventKey='0'>
             <Accordion.Header>
-              <h6>For Exam cell related queries: Mr. Bijendra Singhs</h6>
+              <h6>For Exam cell related queries</h6>
             </Accordion.Header>
             <Accordion.Body>
+              <strong>
+                Mr. Bijendra Singhs
+                <br />
+              </strong>
               <BiMailSend />
               <span>
                 Email:{" "}
