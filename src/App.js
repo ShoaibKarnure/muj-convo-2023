@@ -20,7 +20,7 @@ function App() {
             </Protected>
           }
         />
-        {/* <Route path='/feedback' element={<FeedBackForm />} /> */}
+        <Route path='/feedback' element={<FeedBackForm />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>
