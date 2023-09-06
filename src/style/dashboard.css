@@ -18,12 +18,13 @@
   background-color: white;
   width: 75%;
 }
-.main {
+.mainy {
   display: flex;
   width: 100%;
   justify-content: space-between;
   padding: 5%;
   background-color: white;
+  margin-top: 100px;
 }
 
 .main-left {

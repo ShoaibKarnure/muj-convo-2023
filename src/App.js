@@ -3,7 +3,7 @@ import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Dash from "./pages/Dash";
 import Protected from "./components/Protected";
-import FeedBackForm from "./pages/Feedback";
+import Feedback from "./pages/Feedback";
 import Contact from "../src/pages/Contact";
 import "bootstrap/dist/css/bootstrap.css";
 function App() {
@@ -20,7 +20,7 @@ function App() {
             </Protected>
           }
         />
-        <Route path='/feedback' element={<FeedBackForm />} />
+        <Route path='/feedback' element={<Feedback />} />
         <Route path='/contact' element={<Contact />} />
       </Routes>
     </BrowserRouter>

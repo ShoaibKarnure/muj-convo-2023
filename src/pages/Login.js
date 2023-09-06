@@ -30,8 +30,8 @@ const Login = () => {
       items: 1,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
+      breakpoint: { max: 1024, min: 760 },
+      items: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
@@ -88,7 +88,7 @@ const Login = () => {
           showDots
           arrows={false}
           autoPlay
-          autoPlaySpeed={1000}
+          autoPlaySpeed={3000}
           infinite
           pauseOnHover={false}
         >
