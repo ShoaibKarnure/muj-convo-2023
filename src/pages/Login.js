@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "../style/login.css";
@@ -9,6 +9,7 @@ import img3 from "../assets/DSC_5580 1.png";
 import img4 from "../assets/image 5.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -37,6 +38,7 @@ const Login = () => {
       items: 1,
     },
   };
+  const { token, setToken, isuserloggedin, setIsuserloggedin } = useAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (role == "student") {
@@ -54,7 +56,9 @@ const Login = () => {
         });
         localStorage.setItem("login", stringifieddata);
       }
-      navigate("/dashboard");
+      setToken(result.data.token);
+      setIsuserloggedin(true);
+      navigate("/");
     } catch (e) {
       console.log(e);
     }
@@ -73,6 +77,9 @@ const Login = () => {
       console.log(e);
     }
   };
+  useEffect(() => {
+    localStorage.clear();
+  });
   return (
     <div className='login-full'>
       <div className='carousel-login'>

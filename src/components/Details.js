@@ -1,38 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-const Details = () => {
-  async function getUsers() {
-    // const [details, setDetails] = useState();
-    try {
-      const response = await axios.get(
-        "https://us-central1-muj-convocation-2023.cloudfunctions.net/app/auth/getUser",
-        {
-          headers: {
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZjMzYTk2ODZmOWQ3ZWU1YWNhMzM1NSIsImlhdCI6MTY5MzcyMDM3NCwiZXhwIjoxNjkzNzU2Mzc0fQ.wX-wkgtj4QyEKyHuZ146XM-gXjUVjPWuBdbkHzXiQuI
-`,
-          },
-        }
-      );
-      console.log(response);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  useEffect(() => {
-    getUsers();
-  }, []);
-  const user = {
-    Faculty: "Faculty of CSE",
-    School: "School of Computer Science",
-    Program: "BTech. CSE",
-    RegistrationNo: 12,
-    StudentName: "Ananya",
-    Gender: "F",
-    Batch: "2025",
-    Credits: "120",
-    GPA: 10.26,
-    Email: "ananya.219311187@muj.manipal.edu",
-  };
+import { useAuth } from "../context/AuthContext";
+const Details = ({ singleUser }) => {
   return (
     <div className='main-left'>
       <div className='left-div'>
@@ -53,43 +22,43 @@ const Details = () => {
             })} */}
             <tr>
               <td>Faculty</td>
-              <td>{user.Faculty}</td>
+              <td>{singleUser.faculty}</td>
             </tr>
             <tr>
               <td>School</td>
-              <td>{user.School}</td>
+              <td>{singleUser.school}</td>
             </tr>
             <tr>
               <td>Program</td>
-              <td>{user.Program}</td>
+              <td>{singleUser.programme}</td>
             </tr>
             <tr>
               <td>Registration No</td>
-              <td>{user.RegistrationNo}</td>
+              <td>{singleUser.reg_no}</td>
             </tr>
             <tr>
               <td>Student Name</td>
-              <td>{user.StudentName}</td>
+              <td>{singleUser.student_name}</td>
             </tr>
             <tr>
               <td>Gender</td>
-              <td>{user.Gender}</td>
+              <td>{singleUser.gender}</td>
             </tr>
             <tr>
               <td>Batch</td>
-              <td>{user.Batch}</td>
+              <td>{singleUser.batch}</td>
             </tr>
             <tr>
               <td>Credits</td>
-              <td>{user.Credits}</td>
+              <td>{singleUser.credits}</td>
             </tr>
             <tr>
               <td>GPA</td>
-              <td>{user.GPA}</td>
+              <td>{singleUser.cgpa}</td>
             </tr>
             <tr>
               <td>Email</td>
-              <td>{user.Email}</td>
+              <td>{singleUser.email}</td>
             </tr>
           </tbody>
         </table>
