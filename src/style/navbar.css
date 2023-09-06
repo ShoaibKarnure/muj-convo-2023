@@ -28,4 +28,5 @@ li {
 }
 .nav-items li {
   margin-left: 2rem;
+  cursor: pointer;
 }
