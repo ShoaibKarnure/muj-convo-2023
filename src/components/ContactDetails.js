@@ -25,10 +25,8 @@ const ContactDetails = () => {
               </span>
             </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
 
-        <Accordion>
-          <Accordion.Item eventKey='0'>
+          <Accordion.Item eventKey='1'>
             <Accordion.Header>
               <h6>For Library Dues</h6>
             </Accordion.Header>
@@ -46,10 +44,8 @@ const ContactDetails = () => {
               </span>
             </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
 
-        <Accordion>
-          <Accordion.Item eventKey='0'>
+          <Accordion.Item eventKey='2'>
             <Accordion.Header>
               <h6>For Finance Dues</h6>
             </Accordion.Header>
@@ -68,10 +64,8 @@ const ContactDetails = () => {
               </span>
             </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
 
-        <Accordion>
-          <Accordion.Item eventKey='0'>
+          <Accordion.Item eventKey='3'>
             <Accordion.Header>
               <h6>For Mess Dues:</h6>
             </Accordion.Header>
@@ -85,10 +79,8 @@ const ContactDetails = () => {
               </span>
             </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
 
-        <Accordion>
-          <Accordion.Item eventKey='0'>
+          <Accordion.Item eventKey='4'>
             <Accordion.Header>
               <h6>For Hostel Dues</h6>
             </Accordion.Header>
@@ -107,10 +99,8 @@ const ContactDetails = () => {
               </span>
             </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
 
-        <Accordion>
-          <Accordion.Item eventKey='0'>
+          <Accordion.Item eventKey='5'>
             <Accordion.Header>
               <h6>For AMS/Academics Dues </h6>
             </Accordion.Header>
@@ -129,10 +119,8 @@ const ContactDetails = () => {
               </span>
             </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
 
-        <Accordion>
-          <Accordion.Item eventKey='0'>
+          <Accordion.Item eventKey='6'>
             <Accordion.Header>
               <h6>For Sports Dues</h6>
             </Accordion.Header>
@@ -151,10 +139,8 @@ const ContactDetails = () => {
               </span>
             </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
 
-        <Accordion>
-          <Accordion.Item eventKey='0'>
+          <Accordion.Item eventKey='7'>
             <Accordion.Header>
               <h6>For Exam cell related queries</h6>
             </Accordion.Header>
