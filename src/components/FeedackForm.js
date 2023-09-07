@@ -13,7 +13,21 @@ import {
 
 const FeedBackForm = () => {
   const [loading, setLoading] = useState(false);
-
+  const [data, setData] = useState(questions);
+  console.log(data);
+  const handleChange = (e) => {
+    console.log(e.target.name);
+    const c = data.map((ques, index) => {
+      if (index == e.target.name) {
+        return { ...ques, ans: e.target.value };
+      } else {
+        return { ...ques };
+      }
+    });
+    console.log(c);
+    setData(c);
+  };
+  console.log(data);
   return (
     <FormGroup>
       <h2 style={{ textAlign: "center" }}>Feedback Form</h2>
@@ -38,7 +52,9 @@ const FeedBackForm = () => {
                           required
                           row
                           aria-labelledby='demo-row-radio-buttons-group-label'
-                          name='row-radio-buttons-group'
+                          name={index}
+                          value={data[index].ans}
+                          onChange={handleChange}
                           defaultValue={
                             ques.enum[parseInt(ques.enum.length / 2)]
                           }
@@ -48,6 +64,7 @@ const FeedBackForm = () => {
                               key={i}
                               value={opt}
                               control={<Radio />}
+                              id={i}
                               label={opt}
                             />
                           ))}
@@ -58,11 +75,13 @@ const FeedBackForm = () => {
                     <TextField
                       fullWidth
                       required
+                      name={index}
                       variant='outlined'
                       type={ques.type}
+                      value={data[index].ans}
+                      onChange={handleChange}
                       placeholder='Answer'
                       label='Required'
-                      onChange={(e) => console.log(e.target.value)}
                     />
                   )}
                 </div>

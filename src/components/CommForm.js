@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-
+import { useAuth } from "../context/AuthContext";
+import axios from "axios";
 const CommForm = ({ singleUser }) => {
+  const { token, setToken, isuserloggedin, setIsuserloggedin } = useAuth();
   const [formData, setFormData] = useState({
     country: singleUser.country || "",
     phone: singleUser.phone || "",
@@ -23,6 +25,21 @@ const CommForm = ({ singleUser }) => {
   const handleChange = (e) => {
     console.log(e.target.name);
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = () => {
+    try {
+      const response = axios.post(
+        "https://us-central1-muj-convocation-2023.cloudfunctions.net/app/auth/add-communication-data",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+    } catch (e) {
+      console.log(e);
+    }
   };
   return (
     <>
