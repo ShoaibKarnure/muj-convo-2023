@@ -9,12 +9,21 @@ export function Authprov({ children }) {
   ) || {
     clienttoken: null,
     loginstatus: false,
+    roll: null,
   };
   const [token, setToken] = useState(clienttoken);
   const [isuserloggedin, setIsuserloggedin] = useState(loginstatus);
+  const [role, setRole] = useState();
   return (
     <Authcontext.Provider
-      value={{ token, setToken, isuserloggedin, setIsuserloggedin }}
+      value={{
+        token,
+        setToken,
+        isuserloggedin,
+        setIsuserloggedin,
+        role,
+        setRole,
+      }}
     >
       {children}
     </Authcontext.Provider>

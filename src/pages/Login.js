@@ -41,18 +41,23 @@ const Login = () => {
   const { token, setToken, isuserloggedin, setIsuserloggedin } = useAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let params;
     if (role == "student") {
+      params = { role: role, reg_no: regNo, password: password };
+    } else {
+      params = { role: role, email: email, password: password };
     }
     try {
       const result = await axios.post(
         "https://us-central1-muj-convocation-2023.cloudfunctions.net/app/auth/login",
-        { role: role, reg_no: regNo, password: password }
+        params
       );
       console.log(result);
       if (result.data.success) {
         const stringifieddata = JSON.stringify({
           loginstatus: true,
           clienttoken: result.data.token,
+          role: role,
         });
         localStorage.setItem("login", stringifieddata);
       }
@@ -65,8 +70,7 @@ const Login = () => {
   };
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    if (role == "student") {
-    }
+
     try {
       const result = await axios.post(
         "https://us-central1-muj-convocation-2023.cloudfunctions.net/app/auth/register",
