@@ -13,7 +13,7 @@ import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [role, setRole] = useState("student");
+  const [roles, setRoles] = useState("student");
   const [email, setEmail] = useState("");
   const [regNo, setRegNo] = useState();
   const [newRegNo, setNewRegNo] = useState();
@@ -38,14 +38,15 @@ const Login = () => {
       items: 1,
     },
   };
-  const { token, setToken, isuserloggedin, setIsuserloggedin } = useAuth();
+  const { token, setToken, isuserloggedin, setIsuserloggedin, role, setRole } =
+    useAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
     let params;
-    if (role == "student") {
-      params = { role: role, reg_no: regNo, password: password };
+    if (roles == "student") {
+      params = { role: roles, reg_no: regNo, password: password };
     } else {
-      params = { role: role, email: email, password: password };
+      params = { role: roles, email: email, password: password };
     }
     try {
       const result = await axios.post(
@@ -57,12 +58,13 @@ const Login = () => {
         const stringifieddata = JSON.stringify({
           loginstatus: true,
           clienttoken: result.data.token,
-          role: role,
+          loginRole: roles,
         });
         localStorage.setItem("login", stringifieddata);
       }
       setToken(result.data.token);
       setIsuserloggedin(true);
+      setRole(roles);
       navigate("/");
     } catch (e) {
       console.log(e);
@@ -74,7 +76,7 @@ const Login = () => {
     try {
       const result = await axios.post(
         "https://us-central1-muj-convocation-2023.cloudfunctions.net/app/auth/register",
-        { role: "student", reg_no: newRegNo }
+        { roles: "student", reg_no: newRegNo }
       );
       console.log(result);
     } catch (e) {
@@ -83,6 +85,7 @@ const Login = () => {
   };
   useEffect(() => {
     localStorage.clear();
+    setIsuserloggedin(false);
   });
   return (
     <div className='login-full'>
@@ -122,15 +125,15 @@ const Login = () => {
                   <select
                     name=''
                     id=''
-                    value={role}
-                    onChange={(e) => setRole(e.target.value)}
+                    value={roles}
+                    onChange={(e) => setRoles(e.target.value)}
                   >
                     <option value='student'>Student</option>
                     <option value='department'>Department</option>
                   </select>
                 </div>
                 <div className='container'>
-                  {role == "student" ? (
+                  {roles == "student" ? (
                     <input
                       type='number'
                       placeholder='Registration No'

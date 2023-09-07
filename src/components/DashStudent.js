@@ -5,6 +5,7 @@ import Details from "./Details";
 import CommForm from "./CommForm";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
+import Feedback from "../pages/Feedback";
 
 const DashStudent = () => {
   const [singleUser, setSingleUser] = useState([]);
@@ -34,8 +35,20 @@ const DashStudent = () => {
       <div className='layer'>
         <div className='super'>
           <div className='mainy'>
-            <Details singleUser={singleUser} setSingleUser={setSingleUser} />
-            <CommForm singleUser={singleUser} setSingleUser={setSingleUser} />
+            {!singleUser.feedbackGiven ? (
+              <Feedback />
+            ) : (
+              <>
+                <Details
+                  singleUser={singleUser}
+                  setSingleUser={setSingleUser}
+                />
+                <CommForm
+                  singleUser={singleUser}
+                  setSingleUser={setSingleUser}
+                />
+              </>
+            )}
           </div>
         </div>
         <img src={vector} alt='' className='vector' />
