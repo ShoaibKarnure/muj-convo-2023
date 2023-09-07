@@ -7,18 +7,18 @@ const CommForm = ({ singleUser }) => {
     state: singleUser.state || "",
     city: singleUser.city || "",
     district: singleUser.district || "",
-    address: "",
+    address: singleUser.address || "",
     pincode: singleUser.pincode || "",
     checked: false,
     account_holder_name: singleUser.account_holder_name || "",
-    bank_address: singleUser.bank_address,
-    account_number: singleUser.account_number,
-    bank_name: singleUser.bank_name,
-    branch_name: singleUser.branch_name,
-    ifsc_code: singleUser.ifsc_code,
-    aadhar_front_picture: singleUser.aadhar_front_picture,
-    aadhar_back_picture: singleUser.aadhar_back_picture,
-    cancel_check: singleUser.cancel_check,
+    bank_address: singleUser.bank_address || "",
+    account_number: singleUser.account_number || "",
+    bank_name: singleUser.bank_name || "",
+    branch_name: singleUser.branch_name || "",
+    ifsc_code: singleUser.ifsc_code || "",
+    aadhar_front_picture: singleUser.aadhar_front_picture || "",
+    aadhar_back_picture: singleUser.aadhar_back_picture || "",
+    cancel_check: singleUser.cancel_check || "",
   });
   const handleChange = (e) => {
     console.log(e.target.name);
@@ -113,56 +113,74 @@ const CommForm = ({ singleUser }) => {
             <div className='refund-inp-div'>
               <div className='refund-inp'>
                 <input
+                  name='account_holder_name'
                   type='text'
                   class='form-control'
                   placeholder='Account Holder Name'
                   id='AccHolderName'
+                  value={formData.account_holder_name}
+                  onChange={handleChange}
                   required
                 />
               </div>
               <div className='refund-inp'>
                 <input
+                  name='account_number'
                   type='text'
                   class='form-control'
                   placeholder='Account Number'
                   id='AccNum'
+                  value={formData.account_number}
+                  onChange={handleChange}
                   required
                 />
               </div>
               <div className='refund-inp'>
                 <input
+                  name='bank_name'
                   type='text'
                   class='form-control'
                   placeholder='Bank Name'
                   id='bankName'
+                  value={formData.bank_name}
+                  onChange={handleChange}
                   required
                 />
               </div>
               <div className='refund-inp'>
                 <input
+                  name='branch_name'
                   type='text'
                   class='form-control'
                   placeholder='Bank Branch'
                   id='bankBranch'
+                  value={formData.branch_name}
+                  onChange={handleChange}
                   required
                 />
               </div>
 
               <div className='refund-inp'>
                 <input
+                  name='bank_address'
                   type='text'
                   class='form-control'
                   placeholder='Bank Address'
                   id='bankAddress'
+                  value={formData.bank_address}
+                  onChange={handleChange}
                   required
                 />
               </div>
               <div className='refund-inp'>
                 <input
+                  name='ifsc_code'
                   type='text'
                   class='form-control'
                   placeholder='IFSC Code'
                   id='IFSC'
+                  value={formData.ifsc_code}
+                  onChange={handleChange}
                   required
                 />
               </div>
