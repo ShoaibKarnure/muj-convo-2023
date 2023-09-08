@@ -11,6 +11,7 @@ const DepDash = () => {
     faculty: "",
     specialization: "",
   });
+  const [dues, setDues] = useState([{}]);
   return (
     <>
       <div className='home'>
@@ -22,9 +23,14 @@ const DepDash = () => {
               </div>
               <div className='Dash-Upper'>
                 <DepDetails student={student} setStudent={setStudent} />
-                <DepForm student={student} setStudent={setStudent} />
+                <DepForm
+                  student={student}
+                  setStudent={setStudent}
+                  dues={dues}
+                  setDues={setDues}
+                />
               </div>
-              <DepTable />
+              <DepTable dues={dues} setDues={setDues} />
             </div>
           </div>
         </div>

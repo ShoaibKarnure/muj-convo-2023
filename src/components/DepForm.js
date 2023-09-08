@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
-const DepForm = ({ student, setStudent }) => {
+const DepForm = ({ student, setStudent, dues, setDues }) => {
   const [reg_no, setRegNo] = useState("");
   const [amount_due, setAmountDue] = useState("");
   const [showDetails, setShowDetails] = useState(false);
@@ -20,9 +20,19 @@ const DepForm = ({ student, setStudent }) => {
           },
         }
       );
+      const response2 = await axios.get(
+        `https://us-central1-muj-convocation-2023.cloudfunctions.net/app/due/get-student-dept-dues/${reg_no}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response2);
       setShowDetails(true);
       setStudent(response.data.student);
       console.log(response);
+      setDues(response2.data.data);
     } catch (e) {
       console.log(e);
     }

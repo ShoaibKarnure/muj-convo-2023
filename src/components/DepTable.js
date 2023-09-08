@@ -1,6 +1,6 @@
 import React from "react";
 
-const DepTable = () => {
+const DepTable = ({ dues, setDues }) => {
   return (
     <div>
       <div className='table'>
@@ -17,11 +17,21 @@ const DepTable = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>___</td>
-                  <td>___</td>
-                  <td>___</td>
-                </tr>
+                {dues.map((due) => {
+                  return (
+                    <tr>
+                      <td>{due.amount_due || "__"}</td>
+                      <td>{due.details || "__"}</td>
+                      <td>
+                        {due.is_clear === undefined
+                          ? "__"
+                          : due.is_clear
+                          ? "cleared"
+                          : "clear"}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
