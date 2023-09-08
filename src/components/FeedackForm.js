@@ -10,8 +10,11 @@ import {
   TextField,
   Button,
 } from "@mui/material";
-
+import axios from "axios";
+import { useAuth } from "../context/AuthContext";
 const FeedBackForm = () => {
+  const { token, setToken, isuserloggedin, setIsuserloggedin, role, setRole } =
+    useAuth();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState(questions);
   console.log(data);
@@ -26,6 +29,23 @@ const FeedBackForm = () => {
     });
     console.log(c);
     setData(c);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "https://us-central1-muj-convocation-2023.cloudfunctions.net/app/feedback/submit-feedback",
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
   };
   console.log(data);
   return (
@@ -98,6 +118,7 @@ const FeedBackForm = () => {
             }}
             variant='contained'
             type='submit'
+            onClick={handleSubmit}
           >
             <span style={{ fontSize: "1.1rem" }}>
               {loading ? "Loading..." : "Submit"}

@@ -6,6 +6,7 @@ import CommForm from "./CommForm";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 import Feedback from "../pages/Feedback";
+import SavedDetails from "./SavedDetails";
 
 const DashStudent = () => {
   const [singleUser, setSingleUser] = useState([]);
@@ -43,10 +44,17 @@ const DashStudent = () => {
                   singleUser={singleUser}
                   setSingleUser={setSingleUser}
                 />
-                <CommForm
-                  singleUser={singleUser}
-                  setSingleUser={setSingleUser}
-                />
+                {singleUser.phone ? (
+                  <SavedDetails
+                    singleUser={singleUser}
+                    setSingleUser={setSingleUser}
+                  />
+                ) : (
+                  <CommForm
+                    singleUser={singleUser}
+                    setSingleUser={setSingleUser}
+                  />
+                )}
               </>
             )}
           </div>

@@ -79,7 +79,7 @@ const CommForm = ({ singleUser }) => {
                   name='city'
                   type='text'
                   class='form-control'
-                  paceholder='City'
+                  placeholder='City'
                   id='city'
                   value={formData.city}
                   onChange={handleChange}
@@ -240,7 +240,9 @@ const CommForm = ({ singleUser }) => {
               </div>
             </div>
             <div className='save-btn'>
-              <button className='btn btn-outline-dark'>Save Details</button>
+              <button className='btn btn-outline-dark' onClick={handleSubmit}>
+                Save Details
+              </button>
             </div>
           </div>
         </form>
