@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/depDash.css";
 import vector from "../assets/Vector.svg";
 import DepDetails from "./DepDetails";
@@ -6,6 +6,11 @@ import DepForm from "./DepForm";
 import DepTable from "./DepTable";
 
 const DepDash = () => {
+  const [student, setStudent] = useState({
+    student_name: "",
+    faculty: "",
+    specialization: "",
+  });
   return (
     <>
       <div className='home'>
@@ -16,8 +21,8 @@ const DepDash = () => {
                 <h1>Admin</h1>
               </div>
               <div className='Dash-Upper'>
-                <DepDetails />
-                <DepForm />
+                <DepDetails student={student} setStudent={setStudent} />
+                <DepForm student={student} setStudent={setStudent} />
               </div>
               <DepTable />
             </div>

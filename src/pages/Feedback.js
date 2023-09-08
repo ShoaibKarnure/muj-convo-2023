@@ -4,8 +4,13 @@ import FeedBackForm from "../components/FeedackForm";
 function Feedback() {
   return (
     <>
-      <div className='mainy'>
-        <FeedBackForm />
+      <div className='layer'>
+        <div className='super'>
+          <div className='mainy'>
+            <FeedBackForm />
+          </div>
+        </div>
+        <img src={bigVector} alt='' className='vector' />
       </div>
     </>
   );
