@@ -3,16 +3,17 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 const Details = ({ singleUser }) => {
   return (
-    <div className='main-left'>
-      <div className='left-div'>
-        <h2 className='details-head '>Student Details</h2>
-        <table className='deet-table table table-striped table-borderless'>
-          <tbody>
-            <tr>
-              <th scope='col'>Field</th>
-              <th scope='col'>Details</th>
-            </tr>
-            {/* {Object.keys(user).forEach((key) => {
+    <div className='dash-main-left'>
+      <div className='dash-left-div'>
+        <h2 className='dash-details-head '>Student Details</h2>
+        <div className='table-responsive dash-table-div'>
+          <table className='dash-deet-table table table-striped table-borderless'>
+            <tbody>
+              <tr>
+                <th scope='col'>Field</th>
+                <th scope='col'>Details</th>
+              </tr>
+              {/* {Object.keys(user).forEach((key) => {
               return (
                 <tr>
                   <td>{key}</td>
@@ -20,52 +21,53 @@ const Details = ({ singleUser }) => {
                 </tr>
               );
             })} */}
-            <tr>
-              <td>Faculty</td>
-              <td>{singleUser.faculty}</td>
-            </tr>
-            <tr>
-              <td>School</td>
-              <td>{singleUser.school}</td>
-            </tr>
-            <tr>
-              <td>Program</td>
-              <td>{singleUser.programme}</td>
-            </tr>
-            <tr>
-              <td>Registration No</td>
-              <td>{singleUser.reg_no}</td>
-            </tr>
-            <tr>
-              <td>Student Name</td>
-              <td>{singleUser.student_name}</td>
-            </tr>
-            <tr>
-              <td>Gender</td>
-              <td>{singleUser.gender}</td>
-            </tr>
-            <tr>
-              <td>Batch</td>
-              <td>{singleUser.batch}</td>
-            </tr>
-            <tr>
-              <td>Credits</td>
-              <td>{singleUser.credits}</td>
-            </tr>
-            <tr>
-              <td>GPA</td>
-              <td>{singleUser.cgpa}</td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>{singleUser.email}</td>
-            </tr>
-          </tbody>
-        </table>
+              <tr>
+                <td>Faculty</td>
+                <td>{singleUser.faculty}</td>
+              </tr>
+              <tr>
+                <td>School</td>
+                <td>{singleUser.school}</td>
+              </tr>
+              <tr>
+                <td>Program</td>
+                <td>{singleUser.programme}</td>
+              </tr>
+              <tr>
+                <td>Registration No</td>
+                <td>{singleUser.reg_no}</td>
+              </tr>
+              <tr>
+                <td>Student Name</td>
+                <td>{singleUser.student_name}</td>
+              </tr>
+              <tr>
+                <td>Gender</td>
+                <td>{singleUser.gender}</td>
+              </tr>
+              <tr>
+                <td>Batch</td>
+                <td>{singleUser.batch}</td>
+              </tr>
+              <tr>
+                <td>Credits</td>
+                <td>{singleUser.credits}</td>
+              </tr>
+              <tr>
+                <td>GPA</td>
+                <td>{singleUser.cgpa}</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>{singleUser.email}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <br />
         <br />
-        <div className='left-companions-div'>
-          <p className='companions'>
+        <div className='dash-left-companions-div'>
+          <p className='dash-companions'>
             <strong>Choose no. of companions attending with you</strong>
           </p>
           <select
@@ -83,7 +85,7 @@ const Details = ({ singleUser }) => {
         </div>
         <br />
         <br />
-        <div className='attendDiv'>
+        <div className='dash-attendDiv'>
           <p>
             <strong>Will you be attending the convocation In-Person? </strong>
           </p>
@@ -116,7 +118,7 @@ const Details = ({ singleUser }) => {
         </div>
         <br />
         <br />
-        <div class='form-check infoCheckDiv'>
+        <div class='form-check dash-infoCheckDiv'>
           <input
             class='form-check-input'
             type='checkbox'
@@ -133,10 +135,11 @@ const Details = ({ singleUser }) => {
         <br />
         <br />
         <div>
-          <button className='btn btn-dark confirmBtn'>CONFIRM & PAY</button>
+          <button className='btn btn-dark dash-confirmBtn'>
+            CONFIRM & PAY
+          </button>
         </div>
       </div>
-      <div></div>
     </div>
   );
 };

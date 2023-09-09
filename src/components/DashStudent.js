@@ -33,9 +33,9 @@ const DashStudent = () => {
   }, []);
   return (
     <>
-      <div className='layer'>
-        <div className='super'>
-          <div className='mainy'>
+      <div className='dash-layer'>
+        <div className='dash-super'>
+          <div className='dash-mainy'>
             {!singleUser.feedbackGiven ? (
               <Feedback />
             ) : (
