@@ -59,7 +59,7 @@ const DashStudent = () => {
             )}
           </div>
         </div>
-        <img src={vector} alt='' className='vector' />
+        <img src={vector} alt='' className='dash-vector' />
       </div>
     </>
   );
