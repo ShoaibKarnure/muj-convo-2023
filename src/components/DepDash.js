@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../style/depDash.css";
 import vector from "../assets/Vector.svg";
 import DepDetails from "./DepDetails";
 import DepForm from "./DepForm";
 import DepTable from "./DepTable";
-
-const DepDash = () => {
+import { useAuth } from "../context/AuthContext";
+import axios from "axios";
+const DepDash = ({ singleUser, setSingleUser }) => {
   const [student, setStudent] = useState({
     student_name: "",
     faculty: "",
@@ -28,6 +29,8 @@ const DepDash = () => {
                   setStudent={setStudent}
                   dues={dues}
                   setDues={setDues}
+                  singleUser={singleUser}
+                  setSingleUser={setSingleUser}
                 />
               </div>
               <DepTable dues={dues} setDues={setDues} />

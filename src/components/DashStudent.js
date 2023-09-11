@@ -8,29 +8,7 @@ import axios from "axios";
 import Feedback from "../pages/Feedback";
 import SavedDetails from "./SavedDetails";
 
-const DashStudent = () => {
-  const [singleUser, setSingleUser] = useState([]);
-  const { token, setToken, isuserloggedin, setIsuserloggedin } = useAuth();
-  async function getUsers() {
-    try {
-      const response = await axios.get(
-        "https://us-central1-muj-convocation-2023.cloudfunctions.net/app/auth/getUser",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      setSingleUser(response.data.data);
-      console.log(response);
-    } catch (e) {
-      console.log(e);
-      setIsuserloggedin(false);
-    }
-  }
-  useEffect(() => {
-    getUsers();
-  }, []);
+const DashStudent = ({ singleUser, setSingleUser }) => {
   return (
     <>
       <div className='dash-layer'>

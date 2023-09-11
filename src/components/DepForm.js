@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
-const DepForm = ({ student, setStudent, dues, setDues }) => {
+const DepForm = ({
+  student,
+  setStudent,
+  dues,
+  setDues,
+  singleUser,
+  setSingleUser,
+}) => {
   const [reg_no, setRegNo] = useState("");
-  const [amount_due, setAmountDue] = useState("");
+  const [amountDue, setAmountDue] = useState("");
   const [showDetails, setShowDetails] = useState(false);
   const [details, setDetails] = useState("");
 
@@ -20,24 +27,55 @@ const DepForm = ({ student, setStudent, dues, setDues }) => {
           },
         }
       );
-      const response2 = await axios.get(
-        `https://us-central1-muj-convocation-2023.cloudfunctions.net/app/due/get-student-dept-dues/${reg_no}`,
+      getAllDues();
+      setShowDetails(true);
+      setStudent(response.data.student);
+      console.log(response);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  const getAllDues = async () => {
+    const response2 = await axios.get(
+      `https://us-central1-muj-convocation-2023.cloudfunctions.net/app/due/get-student-dept-dues/${reg_no}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    console.log(response2);
+    setDues(response2.data.data);
+  };
+  const handleDueSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      console.log({
+        reg_no: student.reg_no,
+        amount_due: amountDue,
+        details: details,
+        department: singleUser.department,
+      });
+      const response = await axios.post(
+        `https://us-central1-muj-convocation-2023.cloudfunctions.net/app/due/create-student-dept-due`,
+        {
+          reg_no: student.reg_no,
+          amount_due: amountDue,
+          details: details,
+          department: singleUser.department,
+        },
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       );
-      console.log(response2);
-      setShowDetails(true);
-      setStudent(response.data.student);
       console.log(response);
-      setDues(response2.data.data);
+      getAllDues();
     } catch (e) {
       console.log(e);
     }
   };
-  const handleSubmit = () => {};
   return (
     <div className='form'>
       <h3 className='form-heading'>REGISTER/CLEAR STUDENT DUE</h3>
@@ -66,16 +104,24 @@ const DepForm = ({ student, setStudent, dues, setDues }) => {
               className='inputs form-control'
               placeholder='Enter Student Due Amount'
               name='amount_due'
+              value={amountDue}
+              onChange={(e) => setAmountDue(e.target.value)}
               type='text'
             ></input>
             <br />
             <textarea
               className='inputs text-Box'
               placeholder='Enter Student Due Details'
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
               name='details'
             ></textarea>
             <br />
-            <button className='success-btn' type='submit'>
+            <button
+              className='success-btn'
+              type='submit'
+              onClick={handleDueSubmit}
+            >
               REGISTER STUDENT DUE
             </button>
           </form>

@@ -2,14 +2,15 @@ import React from "react";
 import { useState } from "react";
 import { createContext, useContext } from "react";
 
-const RegContext = createContext();
-export function RegProv({ children }) {
-  const [reg, setReg] = useState();
+const SideContext = createContext();
+export function SideProv({ children }) {
+  const [loading, setLoading] = useState();
+  const [errors, setErrors] = useState();
 
   return (
-    <RegContext.Provider value={{ reg, setReg }}>
+    <SideContext.Provider value={{ loading, setLoading, errors, setErrors }}>
       {children}
-    </RegContext.Provider>
+    </SideContext.Provider>
   );
 }
-export const useReg = () => useContext(RegContext);
+export const useSideContext = () => useContext(SideContext);
