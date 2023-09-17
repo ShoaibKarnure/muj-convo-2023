@@ -5,6 +5,7 @@
 
 .layer {
   background-color: white;
+  width: 75%;
 }
 
 .graduationLogo {
@@ -134,7 +135,8 @@
   padding: 20px;
   border-radius: 12px;
   position: relative;
-  width: 100%;
+  margin: 150px 10%;
+  width: 80%;
   background: linear-gradient(90deg, #ed764b, #eba51e 28%, #f7e9b3 71%);
 }
 
