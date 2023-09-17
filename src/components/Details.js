@@ -3,15 +3,15 @@ import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 const Details = ({ singleUser }) => {
   return (
-    <div className='dash-main-left'>
-      <div className='dash-left-div'>
-        <h2 className='dash-details-head '>Student Details</h2>
-        <div className='table-responsive dash-table-div'>
-          <table className='dash-deet-table table table-striped table-borderless'>
+    <div className="dash-main-left">
+      <div className="dash-left-div">
+        <h2 className="dash-details-head ">Student Details</h2>
+        <div className="table-responsive dash-table-div">
+          <table className="dash-deet-table table table-striped table-borderless">
             <tbody>
               <tr>
-                <th scope='col'>Field</th>
-                <th scope='col'>Details</th>
+                <th scope="col">Field</th>
+                <th scope="col">Details</th>
               </tr>
               {/* {Object.keys(user).forEach((key) => {
               return (
@@ -66,66 +66,66 @@ const Details = ({ singleUser }) => {
         </div>
         <br />
         <br />
-        <div className='dash-left-companions-div'>
-          <p className='dash-companions'>
+        <div className="dash-left-companions-div">
+          <p className="dash-companions">
             <strong>Choose no. of companions attending with you</strong>
           </p>
           <select
-            name='companions'
-            id='companions'
-            className='form-select companions-select'
+            name="companions"
+            id="companions"
+            className="form-select companions-select"
           >
-            <option value='' disabled selected>
+            <option value="" disabled selected>
               Select
             </option>
-            <option value='1'>0</option>
-            <option value='1'>1</option>
-            <option value='1'>2</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
           </select>
         </div>
         <br />
         <br />
-        <div className='dash-attendDiv'>
+        <div className="dash-attendDiv">
           <p>
             <strong>Will you be attending the convocation In-Person? </strong>
           </p>
-          <div class='form-check'>
+          <div class="form-check">
             <input
-              class='form-check-input'
-              type='radio'
-              name='attend'
-              value='inPerson'
-              id='inPerson'
+              class="form-check-input"
+              type="radio"
+              name="attend"
+              value="inPerson"
+              id="inPerson"
             />
-            <label class='form-check-label' for='inPerson'>
+            <label class="form-check-label" for="inPerson">
               I will collect degree certificate in Person.
             </label>
           </div>
           {/* <input type="radio" name="inPersonopt" id="inPerson" value='inPerson'/>
         <label htmlFor="inPerson"> I will collect degree certificate in Person.</label> */}
-          <div class='form-check'>
+          <div class="form-check">
             <input
-              class='form-check-input'
-              type='radio'
-              name='attend'
-              value='courrier'
-              id='courrier'
+              class="form-check-input"
+              type="radio"
+              name="attend"
+              value="courrier"
+              id="courrier"
             />
-            <label class='form-check-label' for='courrier'>
+            <label class="form-check-label" for="courrier">
               I will collect degree certificates through courrier service.
             </label>
           </div>
         </div>
         <br />
         <br />
-        <div class='form-check dash-infoCheckDiv'>
+        <div class="form-check dash-infoCheckDiv">
           <input
-            class='form-check-input'
-            type='checkbox'
-            value=''
-            id='infoCheck'
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="infoCheck"
           />
-          <label class='form-check-label' for='infoCheck'>
+          <label class="form-check-label" for="infoCheck">
             <strong>
               I hereby declare that the information above stated above is true
               to the best of my knowlegde.
@@ -135,7 +135,7 @@ const Details = ({ singleUser }) => {
         <br />
         <br />
         <div>
-          <button className='btn btn-dark dash-confirmBtn'>
+          <button className="btn btn-dark dash-confirmBtn">
             CONFIRM & PAY
           </button>
         </div>
