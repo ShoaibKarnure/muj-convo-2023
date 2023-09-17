@@ -5,13 +5,13 @@ import "../style/contact.css";
 const Contact = () => {
   return (
     <>
-      <div className='home'>
-        <div className='vector_right'>
-          <div className='main' style={{ marginTop: "7rem" }}>
+      <div className='homeContactDiv'>
+        <div className='vector_rightContactDiv'>
+          <div className='mainContactDiv' style={{ marginTop: "7rem" }}>
             <ContactDetails />
           </div>
         </div>
-        <img src={vector} alt='' className='vector' />
+        <img src={vector} alt='' className='vectorContactDiv' />
       </div>
     </>
   );
