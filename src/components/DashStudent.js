@@ -11,13 +11,13 @@ import SavedDetails from "./SavedDetails";
 const DashStudent = ({ singleUser, setSingleUser }) => {
   return (
     <>
-      <div className='dash-layer'>
-        <div className='dash-super'>
-          <div className='dash-mainy'>
-            {!singleUser.feedbackGiven ? (
-              <Feedback />
-            ) : (
-              <>
+      {!singleUser.feedbackGiven ? (
+        <Feedback />
+      ) : (
+        <>
+          <div className="dash-layer">
+            <div className="dash-super">
+              <div className="dash-mainy">
                 <Details
                   singleUser={singleUser}
                   setSingleUser={setSingleUser}
@@ -33,12 +33,12 @@ const DashStudent = ({ singleUser, setSingleUser }) => {
                     setSingleUser={setSingleUser}
                   />
                 )}
-              </>
-            )}
+              </div>
+            </div>
+            <img src={vector} alt="" className="dash-vector" />
           </div>
-        </div>
-        <img src={vector} alt='' className='dash-vector' />
-      </div>
+        </>
+      )}
     </>
   );
 };
