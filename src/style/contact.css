@@ -1,20 +1,19 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
+ 
 
-.home {
+.homeContactDiv {
   display: flex;
   background: rgba(225, 84, 20, 1);
+  overflow: hidden;
 }
 
-.vector {
+.vectorContactDiv {
   z-index: 100;
   width: 20%;
   height: 10%;
+  overflow: hidden;
 }
 
-.vector_right {
+.vector_rightContactDiv {
   background-color: white;
   width: 75%;
 }
@@ -44,25 +43,36 @@
   font-size: x-large;
 }
 
-.footer {
+.footer{
   text-align: center;
+
 }
 
-.contactBox {
+.contactBoxContactDiv {
   margin: 10px 20px 20px 10px;
   padding: 10px;
-  border: 4px solid;
+  border: 1px solid black;
   border-radius: 25px;
-  background-color: whitesmoke;
-  width: 650px;
+  background-color: white;
 }
 
-.AccordionBody {
+.AccordionBodyContactDiv{
   margin: 20px;
   margin-right: 50px;
+
 }
 
-.main {
-  /* margin: 10px 20px 10px 40px; */
-  padding: 0px 25px;
+.mainContactDiv{
+  margin: 10px;
+  padding: 15px;
 }
+
+.contact-outerContactDiv{
+  background: linear-gradient(90deg,#ed764b,#eba51e 28%,#f7e9b3 71%);
+  margin: 15px;
+  border: 2px solid white;
+  border-radius: 25px;
+  width: 80%;
+  
+}
+
