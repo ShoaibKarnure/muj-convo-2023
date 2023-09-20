@@ -17,47 +17,47 @@ const SavedDetails = ({ singleUser, setSingleUser }) => {
             </tr>
             <tr>
               <td>Address</td>
-              <td></td>
+              <td>{singleUser.address}</td>
             </tr>
             <tr>
               <td>Bank Address</td>
-              <td></td>
+              <td>{singleUser.bank_address}</td>
             </tr>
             <tr>
               <td>Bank Name</td>
-              <td></td>
+              <td>{singleUser.bank_name}</td>
             </tr>
             <tr>
               <td>Branch Name</td>
-              <td></td>
+              <td>{singleUser.branch_name}</td>
             </tr>
             <tr>
               <td>City</td>
-              <td></td>
+              <td>{singleUser.city}</td>
             </tr>
             <tr>
               <td>Country</td>
-              <td></td>
+              <td>{singleUser.country}</td>
             </tr>
             <tr>
               <td>District</td>
-              <td></td>
+              <td>{singleUser.district}</td>
             </tr>
             <tr>
               <td>IFSC Code</td>
-              <td></td>
+              <td>{singleUser.ifsc_code}</td>
             </tr>
             <tr>
               <td>Phone</td>
-              <td></td>
+              <td>{singleUser.phone}</td>
             </tr>
             <tr>
               <td>Pincode</td>
-              <td></td>
+              <td>{singleUser.pincode}</td>
             </tr>
             <tr>
               <td>State</td>
-              <td></td>
+              <td>{singleUser.state}</td>
             </tr>
           </tbody>
         </table>
