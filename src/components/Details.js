@@ -6,19 +6,15 @@ const PAYU_MERCHANT_KEY = "kqfd6O";
 const PAYU_SALT_KEY = "n0Qpybgx";
 
 const Details = ({ singleUser }) => {
-
-  
   const [companions, setCompanions] = useState("");
   const [attending, setAttending] = useState();
-  
+
   const [inPerson, setInPerson] = useState(true);
 
   const handleChange = (e) => {
-    console.log(e.target.value);
-    console.log(singleUser);
     e.target.value === "inPerson" ? setInPerson(true) : setInPerson(false);
-  setAttending(e.target.value)
-  }
+    setAttending(e.target.value);
+  };
 
   //payment for without courier service
   const pd_in = {
@@ -151,21 +147,18 @@ const Details = ({ singleUser }) => {
         }
       },
     });
-
   };
 
   return (
-    <div className='dash-main-left'>
-      <div className='dash-left-div'>
-        <h2 className='dash-details-head '>Student Details</h2>
-        <div className='table-responsive dash-table-div'>
-          <table className='dash-deet-table table table-striped table-borderless'>
+    <div className="dash-main-left">
+      <div className="dash-left-div">
+        <h2 className="dash-details-head ">Student Details</h2>
+        <div className="table-responsive dash-table-div">
+          <table className="dash-deet-table table table-striped table-borderless">
             <tbody>
-
               <tr className="table-dark">
                 <th scope="col">Field</th>
                 <th scope="col">Details</th>
-
               </tr>
               {/* {Object.keys(user).forEach((key) => {
               return (
@@ -268,7 +261,6 @@ const Details = ({ singleUser }) => {
               }}
             />
             <label className="form-check-label" htmlFor="inPerson">
-
               I will collect degree certificate in Person.
             </label>
           </div>
@@ -285,7 +277,6 @@ const Details = ({ singleUser }) => {
               name="attend"
               value="courrier"
               id="courrier"
-
               onChange={handleChange}
               style={{
                 width: "30px",
@@ -295,7 +286,6 @@ const Details = ({ singleUser }) => {
               }}
             />
             <label className="form-check-label" htmlFor="courrier">
-
               I will collect degree certificates through courrier service.
             </label>
           </div>
@@ -319,7 +309,6 @@ const Details = ({ singleUser }) => {
             }}
           />
           <label className="form-check-label" htmlForr="infoCheck">
-
             <strong>
               I hereby declare that the information above stated above is true
               to the best of my knowlegde.
@@ -330,19 +319,21 @@ const Details = ({ singleUser }) => {
         <br />
         {!singleUser.is_paid ? (
           <div>
-            <button className="btn btn-dark dash-confirmBtn" onClick={handlePaymentClick}>
+            <button
+              className="btn btn-dark dash-confirmBtn"
+              onClick={handlePaymentClick}
+            >
               CONFIRM & PAY
             </button>
           </div>
         ) : (
-          <div style={{textAlign:'center',margin:'20px 0'}}>
+          <div style={{ textAlign: "center", margin: "20px 0" }}>
             <h4>
-              CONGRATULATIONS! <br/> You have successfully registerd for <br/>MUJ 10th
-              Convocation.
+              CONGRATULATIONS! <br /> You have successfully registerd for <br />
+              MUJ 10th Convocation.
             </h4>
           </div>
         )}
-
       </div>
     </div>
   );
