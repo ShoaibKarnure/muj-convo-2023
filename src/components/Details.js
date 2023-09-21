@@ -6,6 +6,7 @@ const Details = ({ singleUser }) => {
 
   const handleChange = (e) => {
     console.log(e.target.value);
+    console.log(singleUser);
     e.target.value === "inPerson" ? setInPerson(true) : setInPerson(false);
   };
 
@@ -102,11 +103,11 @@ const Details = ({ singleUser }) => {
             <strong>Will you be attending the convocation In-Person? </strong>
           </p>
           <div
-            class="form-check"
+            className="form-check"
             style={{ display: "flex", alignItems: "center", margin: "5px 0" }}
           >
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="radio"
               name="attend"
               value="inPerson"
@@ -119,18 +120,18 @@ const Details = ({ singleUser }) => {
                 borderColor: "lightgray",
               }}
             />
-            <label class="form-check-label" for="inPerson">
+            <label className="form-check-label" htmlFor="inPerson">
               I will collect degree certificate in Person.
             </label>
           </div>
           {/* <input type="radio" name="inPersonopt" id="inPerson" value='inPerson'/>
         <label htmlFor="inPerson"> I will collect degree certificate in Person.</label> */}
           <div
-            class="form-check"
+            className="form-check"
             style={{ display: "flex", alignItems: "center", margin: "5px 0" }}
           >
             <input
-              class="form-check-input"
+              className="form-check-input"
               type="radio"
               name="attend"
               value="courrier"
@@ -143,7 +144,7 @@ const Details = ({ singleUser }) => {
                 borderColor: "lightgray",
               }}
             />
-            <label class="form-check-label" for="courrier">
+            <label className="form-check-label" htmlFor="courrier">
               I will collect degree certificates through courrier service.
             </label>
           </div>
@@ -151,11 +152,11 @@ const Details = ({ singleUser }) => {
         <br />
         <br />
         <div
-          class="form-check dash-infoCheckDiv"
+          className="form-check dash-infoCheckDiv"
           style={{ display: "flex", alignItems: "center" }}
         >
           <input
-            class="form-check-input"
+            className="form-check-input"
             type="checkbox"
             value=""
             id="infoCheck"
@@ -166,7 +167,7 @@ const Details = ({ singleUser }) => {
               borderColor: "lightgray",
             }}
           />
-          <label class="form-check-label" for="infoCheck">
+          <label className="form-check-label" htmlForr="infoCheck">
             <strong>
               I hereby declare that the information above stated above is true
               to the best of my knowlegde.
@@ -175,11 +176,20 @@ const Details = ({ singleUser }) => {
         </div>
         <br />
         <br />
-        <div>
-          <button className="btn btn-dark dash-confirmBtn">
-            CONFIRM & PAY
-          </button>
-        </div>
+        {!singleUser.is_paid ? (
+          <div>
+            <button className="btn btn-dark dash-confirmBtn">
+              CONFIRM & PAY
+            </button>
+          </div>
+        ) : (
+          <div style={{textAlign:'center',margin:'20px 0'}}>
+            <h4>
+              CONGRATULATIONS! <br/> You have successfully registerd for <br/>MUJ 10th
+              Convocation.
+            </h4>
+          </div>
+        )}
       </div>
     </div>
   );
