@@ -8,10 +8,10 @@ const Navbar = () => {
   const { isuserloggedin } = useAuth();
 
   return (
-    <div className='navbar-full'>
+    <div className="navbar-full">
       <nav>
-        <img src={mujImg} alt='' className='muj-img' />
-        <ul className='nav-items'>
+        <img src={mujImg} alt="" className="muj-img" />
+        <ul className="nav-items">
           <li
             onClick={() => {
               isuserloggedin ? navigate("/") : navigate("/login");
@@ -20,6 +20,7 @@ const Navbar = () => {
             {isuserloggedin ? "Dashboard" : "Home"}
           </li>
           <li onClick={() => navigate("/contact")}>Contact</li>
+          <li onClick={() => navigate("/faq")}>FAQ</li>
         </ul>
       </nav>
     </div>
