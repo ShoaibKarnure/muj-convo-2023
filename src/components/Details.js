@@ -9,6 +9,13 @@ const Details = ({ singleUser }) => {
   const [companions, setCompanions] = useState("");
   const [attending, setAttending] = useState();
 
+  const [inPerson, setInPerson] = useState(true);
+
+  const handleChange = (e) => {
+    e.target.value === "inPerson" ? setInPerson(true) : setInPerson(false);
+    setAttending(e.target.value);
+  };
+
   //payment for without courier service
   const pd_in = {
     key: PAYU_MERCHANT_KEY,
@@ -143,15 +150,15 @@ const Details = ({ singleUser }) => {
   };
 
   return (
-    <div className='dash-main-left'>
-      <div className='dash-left-div'>
-        <h2 className='dash-details-head '>Student Details</h2>
-        <div className='table-responsive dash-table-div'>
-          <table className='dash-deet-table table table-striped table-borderless'>
+    <div className="dash-main-left">
+      <div className="dash-left-div">
+        <h2 className="dash-details-head ">Student Details</h2>
+        <div className="table-responsive dash-table-div">
+          <table className="dash-deet-table table table-striped table-borderless">
             <tbody>
-              <tr>
-                <th scope='col'>Field</th>
-                <th scope='col'>Details</th>
+              <tr className="table-dark">
+                <th scope="col">Field</th>
+                <th scope="col">Details</th>
               </tr>
               {/* {Object.keys(user).forEach((key) => {
               return (
@@ -162,43 +169,43 @@ const Details = ({ singleUser }) => {
               );
             })} */}
               <tr>
-                <td>Faculty</td>
+                <th>Faculty</th>
                 <td>{singleUser.faculty}</td>
               </tr>
               <tr>
-                <td>School</td>
+                <th>School</th>
                 <td>{singleUser.school}</td>
               </tr>
               <tr>
-                <td>Program</td>
+                <th>Program</th>
                 <td>{singleUser.programme}</td>
               </tr>
               <tr>
-                <td>Registration No</td>
+                <th>Registration No</th>
                 <td>{singleUser.reg_no}</td>
               </tr>
               <tr>
-                <td>Student Name</td>
+                <th>Student Name</th>
                 <td>{singleUser.student_name}</td>
               </tr>
               <tr>
-                <td>Gender</td>
+                <th>Gender</th>
                 <td>{singleUser.gender}</td>
               </tr>
               <tr>
-                <td>Batch</td>
+                <th>Batch</th>
                 <td>{singleUser.batch}</td>
               </tr>
               <tr>
-                <td>Credits</td>
+                <th>Credits</th>
                 <td>{singleUser.credits}</td>
               </tr>
               <tr>
-                <td>GPA</td>
+                <th>GPA</th>
                 <td>{singleUser.cgpa}</td>
               </tr>
               <tr>
-                <td>Email</td>
+                <th>Email</th>
                 <td>{singleUser.email}</td>
               </tr>
             </tbody>
@@ -206,68 +213,102 @@ const Details = ({ singleUser }) => {
         </div>
         <br />
         <br />
-        <div className='dash-left-companions-div'>
-          <p className='dash-companions'>
-            <strong>Choose no. of companions attending with you</strong>
-          </p>
-          <select
-            name='companions'
-            id='companions'
-            className='form-select companions-select'
-          >
-            <option value='' disabled selected>
-              Select
-            </option>
-            <option value='0'>0</option>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-          </select>
-        </div>
-        <br />
-        <br />
-        <div className='dash-attendDiv'>
+
+        {inPerson && (
+          <>
+            <div className="dash-left-companions-div">
+              <p className="dash-companions">
+                <strong>Choose no. of companions attending with you</strong>
+              </p>
+              <select
+                name="companions"
+                id="companions"
+                className="form-select companions-select"
+              >
+                <option value="" disabled selected>
+                  Select
+                </option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+
+            <br />
+            <br />
+          </>
+        )}
+        <div className="dash-attendDiv">
           <p>
             <strong>Will you be attending the convocation In-Person? </strong>
           </p>
-          <div class='form-check'>
+          <div
+            className="form-check"
+            style={{ display: "flex", alignItems: "center", margin: "5px 0" }}
+          >
             <input
-              class='form-check-input'
-              type='radio'
-              name='attend'
-              value='inPerson'
-              id='inPerson'
-              onChange={(e) => setAttending(e.target.value)}
+              className="form-check-input"
+              type="radio"
+              name="attend"
+              value="inPerson"
+              id="inPerson"
+              onChange={handleChange}
+              style={{
+                width: "30px",
+                height: "30px",
+                marginRight: "5px",
+                borderColor: "lightgray",
+              }}
             />
-            <label class='form-check-label' for='inPerson'>
+            <label className="form-check-label" htmlFor="inPerson">
               I will collect degree certificate in Person.
             </label>
           </div>
           {/* <input type="radio" name="inPersonopt" id="inPerson" value='inPerson'/>
         <label htmlFor="inPerson"> I will collect degree certificate in Person.</label> */}
-          <div class='form-check'>
+
+          <div
+            className="form-check"
+            style={{ display: "flex", alignItems: "center", margin: "5px 0" }}
+          >
             <input
-              class='form-check-input'
-              type='radio'
-              name='attend'
-              value='courrier'
-              id='courrier'
-              onChange={(e) => setAttending(e.target.value)}
+              className="form-check-input"
+              type="radio"
+              name="attend"
+              value="courrier"
+              id="courrier"
+              onChange={handleChange}
+              style={{
+                width: "30px",
+                height: "30px",
+                marginRight: "5px",
+                borderColor: "lightgray",
+              }}
             />
-            <label class='form-check-label' for='courrier'>
+            <label className="form-check-label" htmlFor="courrier">
               I will collect degree certificates through courrier service.
             </label>
           </div>
         </div>
         <br />
         <br />
-        <div class='form-check dash-infoCheckDiv'>
+        <div
+          className="form-check dash-infoCheckDiv"
+          style={{ display: "flex", alignItems: "center" }}
+        >
           <input
-            class='form-check-input'
-            type='checkbox'
-            value=''
-            id='infoCheck'
+            className="form-check-input"
+            type="checkbox"
+            value=""
+            id="infoCheck"
+            style={{
+              width: "30px",
+              height: "30px",
+              marginRight: "10px",
+              borderColor: "lightgray",
+            }}
           />
-          <label class='form-check-label' for='infoCheck'>
+          <label className="form-check-label" htmlForr="infoCheck">
             <strong>
               I hereby declare that the information above stated above is true
               to the best of my knowlegde.
@@ -276,14 +317,23 @@ const Details = ({ singleUser }) => {
         </div>
         <br />
         <br />
-        <div>
-          <button
-            className='btn btn-dark dash-confirmBtn'
-            onClick={handlePaymentClick}
-          >
-            CONFIRM & PAY
-          </button>
-        </div>
+        {!singleUser.is_paid ? (
+          <div>
+            <button
+              className="btn btn-dark dash-confirmBtn"
+              onClick={handlePaymentClick}
+            >
+              CONFIRM & PAY
+            </button>
+          </div>
+        ) : (
+          <div style={{ textAlign: "center", margin: "20px 0" }}>
+            <h4>
+              CONGRATULATIONS! <br /> You have successfully registerd for <br />
+              MUJ 10th Convocation.
+            </h4>
+          </div>
+        )}
       </div>
     </div>
   );
