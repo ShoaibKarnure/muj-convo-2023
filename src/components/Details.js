@@ -101,7 +101,10 @@ const Details = ({ singleUser }) => {
           <p>
             <strong>Will you be attending the convocation In-Person? </strong>
           </p>
-          <div class="form-check">
+          <div
+            class="form-check"
+            style={{ display: "flex", alignItems: "center", margin: "5px 0" }}
+          >
             <input
               class="form-check-input"
               type="radio"
@@ -109,6 +112,12 @@ const Details = ({ singleUser }) => {
               value="inPerson"
               id="inPerson"
               onChange={handleChange}
+              style={{
+                width: "30px",
+                height: "30px",
+                marginRight: "5px",
+                borderColor: "lightgray",
+              }}
             />
             <label class="form-check-label" for="inPerson">
               I will collect degree certificate in Person.
@@ -116,7 +125,10 @@ const Details = ({ singleUser }) => {
           </div>
           {/* <input type="radio" name="inPersonopt" id="inPerson" value='inPerson'/>
         <label htmlFor="inPerson"> I will collect degree certificate in Person.</label> */}
-          <div class="form-check">
+          <div
+            class="form-check"
+            style={{ display: "flex", alignItems: "center", margin: "5px 0" }}
+          >
             <input
               class="form-check-input"
               type="radio"
@@ -124,6 +136,12 @@ const Details = ({ singleUser }) => {
               value="courrier"
               id="courrier"
               onChange={handleChange}
+              style={{
+                width: "30px",
+                height: "30px",
+                marginRight: "5px",
+                borderColor: "lightgray",
+              }}
             />
             <label class="form-check-label" for="courrier">
               I will collect degree certificates through courrier service.
@@ -132,12 +150,21 @@ const Details = ({ singleUser }) => {
         </div>
         <br />
         <br />
-        <div class="form-check dash-infoCheckDiv">
+        <div
+          class="form-check dash-infoCheckDiv"
+          style={{ display: "flex", alignItems: "center" }}
+        >
           <input
             class="form-check-input"
             type="checkbox"
             value=""
             id="infoCheck"
+            style={{
+              width: "30px",
+              height: "30px",
+              marginRight: "10px",
+              borderColor: "lightgray",
+            }}
           />
           <label class="form-check-label" for="infoCheck">
             <strong>
