@@ -122,6 +122,7 @@
   width: 100%;
   justify-content: space-between;
   padding: 5%;
+  padding-right: 0;
   background-color: white;
   margin-top: 100px;
 }
@@ -129,17 +130,18 @@
 .dash-main-left {
   display: flex;
   flex-direction: column;
-  width: 55%;
+  width: 50%;
 }
 
 .dash-left-div {
-  border: solid 2px;
+  border: solid 2px rgba(225, 84, 20, 1);
   border-radius: 10px;
   padding-top: 10px;
   align-items: center;
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-size: 1rem;
 }
 .dash-details-head {
   padding: 10px;
@@ -147,6 +149,10 @@
 
 .dash-table-div {
   width: 100%;
+}
+
+.saved-table-div{
+  width: 50%;
 }
 
 .dash-deet-table {
@@ -268,7 +274,7 @@ button:focus-visible {
 }
 
 .savedDeet-div {
-  border: solid 2px;
+  border: solid 2px rgba(225, 84, 20, 1);
   border-radius: 10px;
   padding-top: 10px;
   margin-left: 20px;

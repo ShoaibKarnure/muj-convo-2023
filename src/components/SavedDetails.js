@@ -2,67 +2,67 @@ import React from "react";
 
 const SavedDetails = ({ singleUser, setSingleUser }) => {
   return (
-    <div className='table-responsive table-div'>
-      <div className='savedDeet-div '>
+    <div className="table-responsive saved-table-div">
+      <div className="savedDeet-div ">
         <h2
           style={{ textAlign: "center", margin: "10px", marginBottom: "20px" }}
         >
           Communication & Refund Details
         </h2>
-        <table className='table table-striped table-borderless'>
+        <table className="table table-striped table-borderless">
           <tbody>
-            <tr>
-              <th scope='col'>Field</th>
-              <th scope='col'>Details</th>
+            <tr className="table-dark">
+              <th scope="col">Field</th>
+              <th scope="col">Details</th>
             </tr>
             <tr>
-              <td>Address</td>
+              <th>Address</th>
               <td></td>
             </tr>
             <tr>
-              <td>Bank Address</td>
+              <th>Bank Address</th>
               <td></td>
             </tr>
             <tr>
-              <td>Bank Name</td>
+              <th>Bank Name</th>
               <td></td>
             </tr>
             <tr>
-              <td>Branch Name</td>
+              <th>Branch Name</th>
               <td></td>
             </tr>
             <tr>
-              <td>City</td>
+              <th>City</th>
               <td></td>
             </tr>
             <tr>
-              <td>Country</td>
+              <th>Country</th>
               <td></td>
             </tr>
             <tr>
-              <td>District</td>
+              <th>District</th>
               <td></td>
             </tr>
             <tr>
-              <td>IFSC Code</td>
+              <th>IFSC Code</th>
               <td></td>
             </tr>
             <tr>
-              <td>Phone</td>
+              <th>Phone</th>
               <td></td>
             </tr>
             <tr>
-              <td>Pincode</td>
+              <th>Pincode</th>
               <td></td>
             </tr>
             <tr>
-              <td>State</td>
+              <th>State</th>
               <td></td>
             </tr>
           </tbody>
         </table>
-        <div className='edit-details-btn'>
-          <button className='btn btn-outline-dark'>Edit Details</button>
+        <div className="edit-details-btn">
+          <button className="btn btn-outline-dark">Edit Details</button>
         </div>
       </div>
     </div>

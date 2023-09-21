@@ -9,7 +9,7 @@ const Details = ({ singleUser }) => {
         <div className="table-responsive dash-table-div">
           <table className="dash-deet-table table table-striped table-borderless">
             <tbody>
-              <tr>
+              <tr className="table-dark">
                 <th scope="col">Field</th>
                 <th scope="col">Details</th>
               </tr>
@@ -22,43 +22,43 @@ const Details = ({ singleUser }) => {
               );
             })} */}
               <tr>
-                <td>Faculty</td>
+                <th>Faculty</th>
                 <td>{singleUser.faculty}</td>
               </tr>
               <tr>
-                <td>School</td>
+                <th>School</th>
                 <td>{singleUser.school}</td>
               </tr>
               <tr>
-                <td>Program</td>
+                <th>Program</th>
                 <td>{singleUser.programme}</td>
               </tr>
               <tr>
-                <td>Registration No</td>
+                <th>Registration No</th>
                 <td>{singleUser.reg_no}</td>
               </tr>
               <tr>
-                <td>Student Name</td>
+                <th>Student Name</th>
                 <td>{singleUser.student_name}</td>
               </tr>
               <tr>
-                <td>Gender</td>
+                <th>Gender</th>
                 <td>{singleUser.gender}</td>
               </tr>
               <tr>
-                <td>Batch</td>
+                <th>Batch</th>
                 <td>{singleUser.batch}</td>
               </tr>
               <tr>
-                <td>Credits</td>
+                <th>Credits</th>
                 <td>{singleUser.credits}</td>
               </tr>
               <tr>
-                <td>GPA</td>
+                <th>GPA</th>
                 <td>{singleUser.cgpa}</td>
               </tr>
               <tr>
-                <td>Email</td>
+                <th>Email</th>
                 <td>{singleUser.email}</td>
               </tr>
             </tbody>
