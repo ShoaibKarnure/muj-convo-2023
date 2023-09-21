@@ -1,7 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 const Details = ({ singleUser }) => {
+  const [inPerson, setInPerson] = useState(true);
+
+  const handleChange = (e) => {
+    console.log(e.target.value);
+    e.target.value === "inPerson" ? setInPerson(true) : setInPerson(false);
+  };
+
   return (
     <div className="dash-main-left">
       <div className="dash-left-div">
@@ -66,25 +73,30 @@ const Details = ({ singleUser }) => {
         </div>
         <br />
         <br />
-        <div className="dash-left-companions-div">
-          <p className="dash-companions">
-            <strong>Choose no. of companions attending with you</strong>
-          </p>
-          <select
-            name="companions"
-            id="companions"
-            className="form-select companions-select"
-          >
-            <option value="" disabled selected>
-              Select
-            </option>
-            <option value="0">0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-          </select>
-        </div>
-        <br />
-        <br />
+        {inPerson && (
+          <>
+            <div className="dash-left-companions-div">
+              <p className="dash-companions">
+                <strong>Choose no. of companions attending with you</strong>
+              </p>
+              <select
+                name="companions"
+                id="companions"
+                className="form-select companions-select"
+              >
+                <option value="" disabled selected>
+                  Select
+                </option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+
+            <br />
+            <br />
+          </>
+        )}
         <div className="dash-attendDiv">
           <p>
             <strong>Will you be attending the convocation In-Person? </strong>
@@ -96,6 +108,7 @@ const Details = ({ singleUser }) => {
               name="attend"
               value="inPerson"
               id="inPerson"
+              onChange={handleChange}
             />
             <label class="form-check-label" for="inPerson">
               I will collect degree certificate in Person.
@@ -110,6 +123,7 @@ const Details = ({ singleUser }) => {
               name="attend"
               value="courrier"
               id="courrier"
+              onChange={handleChange}
             />
             <label class="form-check-label" for="courrier">
               I will collect degree certificates through courrier service.
