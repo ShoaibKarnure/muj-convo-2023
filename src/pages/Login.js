@@ -72,15 +72,16 @@ const Login = () => {
   };
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-
+    console.log("HI");
     try {
       const result = await axios.post(
         "https://us-central1-muj-convocation-2023.cloudfunctions.net/app/auth/register",
-        { roles: "student", reg_no: newRegNo }
+        { role: "student", reg_no: newRegNo }
       );
       console.log(result);
-    } catch (e) {
-      console.log(e);
+      setRegister(false);
+    } catch (error) {
+      console.log(error);
     }
   };
   useEffect(() => {

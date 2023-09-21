@@ -16,48 +16,51 @@ const SavedDetails = ({ singleUser, setSingleUser }) => {
               <th scope="col">Details</th>
             </tr>
             <tr>
+
               <th>Address</th>
-              <td></td>
+             <td>{singleUser.address}</td>
             </tr>
             <tr>
               <th>Bank Address</th>
-              <td></td>
+              <td>{singleUser.bank_address}</td>
             </tr>
             <tr>
               <th>Bank Name</th>
-              <td></td>
+              <td>{singleUser.branch_name}</td>
             </tr>
             <tr>
               <th>Branch Name</th>
-              <td></td>
+             <td>{singleUser.branch_name}</td>
             </tr>
             <tr>
               <th>City</th>
-              <td></td>
+             <td>{singleUser.city}</td>
             </tr>
             <tr>
               <th>Country</th>
-              <td></td>
+              <td>{singleUser.country}</td>
             </tr>
             <tr>
               <th>District</th>
-              <td></td>
+              <td>{singleUser.district}</td>
             </tr>
             <tr>
               <th>IFSC Code</th>
-              <td></td>
+               <td>{singleUser.ifsc_code}</td>
             </tr>
             <tr>
               <th>Phone</th>
-              <td></td>
+               <td>{singleUser.phone}</td>
             </tr>
             <tr>
               <th>Pincode</th>
-              <td></td>
+             <td>{singleUser.pincode}</td>
             </tr>
             <tr>
               <th>State</th>
-              <td></td>
+               <td>{singleUser.state}</td>
+
+
             </tr>
           </tbody>
         </table>
