@@ -79,6 +79,7 @@ const Login = () => {
         { role: "student", reg_no: newRegNo }
       );
       console.log(result);
+      setRegister(false);
     } catch (error) {
       console.log(error);
     }
